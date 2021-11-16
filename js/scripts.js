@@ -4,9 +4,6 @@
 //this is the value given from the inputs \\
  let inputValue = $('#input').val();
  li.append(inputValue);
- let text = $(document.createTextNode(inputValue))
- li.append(text)
- li.addClass('delete');
  
 if (inputValue === '') {
 alert('you must input something')
@@ -14,16 +11,14 @@ alert('you must input something')
 let list = $('#list'); 
 list.append(li);
 }
- }
-
 function crossOut() {
 li.addClass("strike");
 }
 // when clicked will cross out \\
 li.on("dblclick", crossOut)
     
-let crossOutButton = $("crossOutbutton")
-crossOutButton.append(document.createTextNode("X"));
+let crossOutButton = $("<CrossOutButton>X</crossOutButton")
+crossOutButton.append("X");
 li.append(crossOutButton);
 
 
@@ -34,5 +29,4 @@ li.addClass("delete")
 }
 
 $('#list').sortable();
-
-
+ }
